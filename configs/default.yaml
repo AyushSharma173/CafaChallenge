@@ -1,0 +1,40 @@
+competition:
+  slug: "cafa-6-protein-function-prediction"
+  ontologies: ["P", "F", "C"]
+
+paths:
+  data_dir: "data/raw"
+  processed_dir: "data/processed"
+  embeddings_dir: "data/embeddings"
+  models_dir: "models"
+  submissions_dir: "submissions"
+
+embeddings:
+  model_name: "esm2_t33_650M_UR50D"
+  repr_layer: 33
+  batch_size: 4
+  max_seq_len: 1022
+  dtype: "float16"
+
+training:
+  min_term_count: 50
+  val_fraction: 0.1
+  seed: 42
+
+model:
+  type: "lightgbm"
+  lightgbm:
+    n_estimators: 500
+    learning_rate: 0.05
+    num_leaves: 63
+    min_child_samples: 20
+  mlp:
+    hidden_dims: [2048, 1024]
+    dropout: 0.3
+    lr: 0.001
+    epochs: 30
+    batch_size: 256
+
+submission:
+  propagate: true
+  min_confidence: 0.01

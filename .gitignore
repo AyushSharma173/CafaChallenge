@@ -1,0 +1,39 @@
+# Data files (large, downloaded via Kaggle API)
+data/raw/
+data/processed/
+data/embeddings/
+
+# Model checkpoints
+models/
+
+# Submissions
+submissions/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pt
+*.pkl
+wandb/
